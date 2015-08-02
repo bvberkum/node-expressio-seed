@@ -21,5 +21,20 @@ NodeJS Express.IO Seed
 
 
 - Boilerplate coffee-script project with Express.IO server/client and Mocha tests.
-- Gruntfile (JS) for lintint and testing.
+- Gruntfile (JS) for delinting and testing.
+
+Branch Docs
+-----------
+master
+  - A functional server/client that does nothign but send an example event
+    around.
+
+dev
+  - Intermediate versions of master.
+
+test
+  - Follows dev.
+
+
+
 

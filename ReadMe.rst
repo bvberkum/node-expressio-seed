@@ -1,6 +1,6 @@
 NodeJS Express.IO Seed
 =====================
-:version: 0.0.2-dev
+:version: 0.0.2-dev+20150802-2231
 :dependency status:
 
   .. image:: https://gemnasium.com/dotmpe/node-expressio-seed.png
@@ -35,6 +35,7 @@ dev
 test
   - Follows dev.
 
-
+f_jsc3d
+  - Added JSC3D viewer with demo model in OBJ format.
 
 

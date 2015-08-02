@@ -1,5 +1,6 @@
 port = 7001
 
+express = require 'express'
 app = require('express.io')()
 app.http().io()
 
@@ -9,11 +10,14 @@ app.io.route 'ready', (req) ->
   req.io.emit 'talk',
     message: 'io event from an io route on the server'
 
-# Send the client html.
-app.get '/', (req, res) ->
-  console.log 'Serving client'
-  res.sendfile __dirname + '/public/client.html'
+# add static files
+app.use express.static 'public'
 
+# set the root resource
+app.get '/', (req, res) ->
+  res.redirect 'client.html'
+
+# export this module
 module.exports =
   port: port
   app: app
@@ -25,9 +29,8 @@ module.exports =
     module.exports.proc = proc
     proc
 
-
-a = process.argv
-if a.length == 2 and a[0] == 'coffee' and a[1] == require.resolve './server'
+# start server if this script was invoked by coffee directly
+if process.argv.join(' ') == 'coffee '+require.resolve './server'
   console.log "Starting server"
   module.exports.init()
 

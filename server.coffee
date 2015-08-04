@@ -22,7 +22,8 @@ module.exports =
   port: port
   app: app
   proc: null
-  init: ( done ) ->
+  run: ( done ) ->
+    console.log "Starting server"
     proc = app.listen port, ->
       console.log "server at localhost:#{port}"
       !done || done()
@@ -31,7 +32,6 @@ module.exports =
 
 # start server if this script was invoked by coffee directly
 if process.argv.join(' ') == 'coffee '+require.resolve './server'
-  console.log "Starting server"
-  module.exports.init()
+  module.exports.run()
 
 

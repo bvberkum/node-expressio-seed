@@ -13,15 +13,7 @@ pathResolve = ( path ) ->
 describe "node-expressio-seed-mpe", ->
 
   server = null
-  sessionCookie = null
 
-  reqInit = ( path, method='GET' ) ->
-    host: "localhost"
-    port: server.port || 7000
-    path: path
-    method: 'GET'
-    headers:
-      Cookie: sessionCookie
 
   before ( done ) ->
     server = require pathResolve 'server'

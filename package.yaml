@@ -1,0 +1,25 @@
+
+- type: express-mvc-app/0.1
+  name: app-example
+
+  dir: src/client/base
+  route:
+    main:
+      layout: 'loci-main'
+    entry:
+      layout: 'loci-entry'
+
+
+- type: application/x-project-mpe
+  id: node-expressio-seed
+  main: node-expressio-seed
+  version: 0.0.2-dev
+
+  pd-meta:
+    check: "vchk grunt:lint"
+    test: "vchk grunt:lint grunt:test"
+    git-hooks:
+      pre-commit: ./script/scm/pre-commit.sh
+    init: 
+    - test -n "$(which grunt)"
+

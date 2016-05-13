@@ -1,0 +1,6 @@
+# List files that
+# 1. can be ignored by SCM
+# 2. can be deleted at any time
+# To use with GIT, regenerate local excludes.
+# cat .gitignore-clean >> .git/info/exclude
+mocha.out

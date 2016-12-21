@@ -13,7 +13,7 @@
 - type: application/x-project-mpe
   id: node-expressio-seed
   main: node-expressio-seed
-  version: 0.0.2-dev
+  version: 0.0.2-dev # node-expressio-seed
 
   pd-meta:
     check: "vchk grunt:lint"

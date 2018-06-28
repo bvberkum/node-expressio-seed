@@ -31,14 +31,15 @@
   },
   "main": "server.coffee",
   "scripts": {
-
     "test": "grunt --force lint test",
-
-    "start": "NODE_ENV=development nodemon server.coffee -w coffee -w src -w public -e jade,js,coffee,meta,yaml"
+    "start": "NODE_ENV=development nodemon server.coffee -w coffee -w src -w public -e jade,js,coffee,meta,yaml",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "coffee-script": "^1.11.1",
-    "express.io": "latest"
+    "express.io": "latest",
+    "snyk": "^1.87.0"
   },
   "disabledAltDependencies": {
     "nodelib": "git://github.com/dotmpe/nodelib#dev"
@@ -58,5 +59,6 @@
     "load-grunt-config": "latest",
     "load-grunt-tasks": "latest",
     "request": "^2.60.0"
-  }
+  },
+  "snyk": true
 }
